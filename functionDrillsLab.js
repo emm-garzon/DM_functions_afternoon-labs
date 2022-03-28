@@ -416,11 +416,33 @@ console.log(totalFrogs2);
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9];
+
+let i = 0;
+console.log(sampleArray[i]); // 0
+console.log(sampleArray[i + 1]); // 1
+
+// let sampleArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // ordered version
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
+
+inOrder = (arr1) => {
+  let ascendOrder;
+  for (let i = 0; i < arr1.length; i++) {
+    if (Number(arr1[i]) < Number(arr1[i + 1])) {
+      ascendOrder = true;
+    } else {
+      ascendOrder = false;
+      return ascendOrder;
+    }
+    return ascendOrder;
+  }
+};
+
+const arrayIsAscending = inOrder(sampleArray);
+console.log(arrayIsAscending);
 
 ////////////////// PROBLEM 22 ////////////////////
 
