@@ -258,6 +258,17 @@ printAllNames(namesArr);
 
 //CODE HERE
 
+thatsOdd = (num) => {
+  if (num % 2 === 0) {
+    return "That's not odd.";
+  } else {
+    return "That is odd indeed!";
+  }
+};
+
+const oddChecker = thatsOdd(25);
+console.log(oddChecker);
+
 ////////////////// PROBLEM 14 ////////////////////
 
 /*
@@ -269,6 +280,10 @@ printAllNames(namesArr);
 */
 
 //CODE HERE
+
+bestMovie = (movieTitle) => `${movieTitle} is the best movie ever!`;
+
+console.log(bestMovie("Charade"));
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107];
@@ -282,6 +297,21 @@ let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107];
 */
 
 //CODE HERE
+
+function bigOrSmall(arr) {
+  let answers = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers.push("big");
+    } else {
+      answers.push("small");
+    }
+  }
+  let arrayEvaluator = answers;
+  return arrayEvaluator;
+}
+
+console.log(bigOrSmall(bigOrSmallArray));
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = [
@@ -303,6 +333,20 @@ let loser = "Glimmer";
 
 //CODE HERE
 
+theEliminator = (arr1, str1) => {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] === str1) {
+      arr1.splice(i, 1);
+      console.log(arr1[i]);
+    }
+  }
+  return arr1;
+};
+
+console.log(theEliminator(contestants, loser));
+loser = "Marvel";
+console.log(theEliminator(contestants, loser));
+
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo.";
 /*
@@ -311,6 +355,10 @@ let sampleString = "Hi, my name is Kylo.";
 */
 
 //CODE HERE
+
+capitalLetters = (str) => console.log(str.toUpperCase());
+
+capitalLetters(sampleString);
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -323,11 +371,31 @@ let sampleString = "Hi, my name is Kylo.";
   return 'must provide a valid email address'
 */
 
+emailCheck = (email) => {
+  email = String(email);
+  email = email.trim();
+  if (email.includes("@")) {
+    return "email verified";
+  } else {
+    return "must provide a valid email address";
+  }
+};
+
+console.log(emailCheck("email@email.com"));
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
+
+function buyChocFrog(amtGold) {
+  let numFrogBought = amtGold / 3;
+  return numFrogBought;
+}
+
+const totalFrogs = buyChocFrog(25); // 8
+console.log(totalFrogs);
 
 //CODE HERE
 
@@ -337,6 +405,14 @@ let sampleString = "Hi, my name is Kylo.";
 */
 
 //CODE HERE
+
+function buyChocFrog2(amtGold) {
+  let numFrogBought = Math.floor(amtGold / 3);
+  return numFrogBought;
+}
+
+const totalFrogs2 = buyChocFrog2(25); // 8
+console.log(totalFrogs2);
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9];
@@ -368,13 +444,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = [];
+let globalScope = ["duck"];
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = [];
+let bathroomScope = ["duck", "rubberDuck"];
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = [];
+let bathtubScope = ["duck", "rubberDuck", "sailorDuck"];
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = [];
+let pondScope = ["duck", "realDuck"];
