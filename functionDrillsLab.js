@@ -85,7 +85,7 @@ const compareNums = (num1, num2) => {
     return num1;
   } else if (num1 < num2) {
     return num2;
-  } else if ((num1 = num2)) {
+  } else if (num1 === num2) {
     return num1;
   }
 };
@@ -103,12 +103,12 @@ console.log(compareNums(25, 56));
 //CODE HERE
 
 function add(num1, num2) {
-  num1 = Number(num1);
-  num2 = Number(num2);
+  let num1 = Number(num1);
+  let num2 = Number(num2);
   return num1 + num2;
 }
 
-sum = add(45, 118);
+let sum = add(45, 118);
 console.log(sum);
 
 ////////////////// PROBLEM 7 ////////////////////
@@ -149,6 +149,8 @@ let arrow;
 */
 
 const exclaimThree = (str) => `${str.toUpperCase()}!!!`; // please note that my editor settings encapsulate 'str' in parenthesis automatically, otherwise they would not be there; I understand in accordance with the rules of 'concise body' functions, they can be removed when only one parameter exists -- THANK YOU.
+
+console.log(exclaimThree("hello"));
 
 ////////////////// PROBLEM 9 ////////////////////
 
@@ -208,12 +210,12 @@ console.log(nameGreeting3);
 //CODE HERE
 
 const faveColorFinder = (color) => {
-  color = String(color);
-  if (color === "red") {
+  let color2 = String(color);
+  if (color2 === "red") {
     return "red is a great color";
-  } else if (color === "green") {
+  } else if (color2 === "green") {
     return "green is a solid favorite color";
-  } else if (color === "black") {
+  } else if (color2 === "black") {
     return "so trendy";
   } else {
     return "you need to evaluate your life choices";
@@ -281,7 +283,7 @@ console.log(oddChecker);
 
 //CODE HERE
 
-bestMovie = (movieTitle) => `${movieTitle} is the best movie ever!`;
+const bestMovie = (movieTitle) => `${movieTitle} is the best movie ever!`;
 
 console.log(bestMovie("Charade"));
 
