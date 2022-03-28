@@ -416,10 +416,11 @@ console.log(totalFrogs2);
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9];
+let sampleArrayOrdered = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-let i = 0;
-console.log(sampleArray[i]); // 0
-console.log(sampleArray[i + 1]); // 1
+// let i = 0;
+// console.log(sampleArray[i]); // 0
+// console.log(sampleArray[i + 1]); // 1
 
 // let sampleArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // ordered version
 /*
@@ -428,21 +429,19 @@ console.log(sampleArray[i + 1]); // 1
 
 //CODE HERE
 
-inOrder = (arr1) => {
-  let ascendOrder;
-  for (let i = 0; i < arr1.length; i++) {
-    if (Number(arr1[i]) < Number(arr1[i + 1])) {
-      ascendOrder = true;
-    } else {
-      ascendOrder = false;
-      return ascendOrder;
+function inOrder(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < arr[i + 1]) {
+      // do nothing, just loop back
+    } else if (arr[i] > arr[i + 1]) {
+      return false;
     }
-    return ascendOrder;
   }
-};
+  return true;
+}
 
-const arrayIsAscending = inOrder(sampleArray);
-console.log(arrayIsAscending);
+console.log(inOrder(sampleArray)); // false
+console.log(inOrder(sampleArrayOrdered)); // true
 
 ////////////////// PROBLEM 22 ////////////////////
 
