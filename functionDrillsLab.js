@@ -443,6 +443,8 @@ function inOrder(arr) {
 console.log(inOrder(sampleArray)); // false
 console.log(inOrder(sampleArrayOrdered)); // true
 
+const arrayIsAscending = inOrder(sampleArray); // false
+
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
