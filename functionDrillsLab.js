@@ -103,8 +103,8 @@ console.log(compareNums(25, 56));
 //CODE HERE
 
 function add(num1, num2) {
-  let num1 = Number(num1);
-  let num2 = Number(num2);
+  num1 = Number(num1);
+  num2 = Number(num2);
   return num1 + num2;
 }
 
@@ -431,6 +431,8 @@ let sampleArrayOrdered = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //CODE HERE
 
+// ATTEMPT #1
+
 function inOrder(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     if (arr[i] < arr[i + 1]) {
@@ -441,6 +443,20 @@ function inOrder(arr) {
   }
   return true;
 }
+
+// ATTEMPT #2
+
+function isAscending(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isAscending(sampleArray)); // false
+console.log(isAscending(sampleArrayOrdered)); // true
 
 console.log(inOrder(sampleArray)); // false
 console.log(inOrder(sampleArrayOrdered)); // true
